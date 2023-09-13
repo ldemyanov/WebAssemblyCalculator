@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webassembly calculator</title>
+  <!-- Fonts -->
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- JS -->
+  <script src="./js/index.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-9 d-flex justify-content-center pt-md-5">
+          <div class="calc" id="calc">
+            <div class="calc__display p-4">
+              <input
+                class="calc__history"
+                data-history="0"
+                type="text"
+                value="0"
+                readonly
+              >
+              <input 
+                class="calc__result"
+                data-result="0"
+                type="text"
+                value="0"
+                readonly
+              >
+            </div>
+            <div class="calc__keyboard">
+              <div class="calc__btns">
+                <button class="btn calc__btn" data-action="ac">АС</button>
+                <button class="btn calc__btn" data-action="sign">+/-</button>
+                <button class="btn calc__btn" data-action="percent">%</button>
+                <button class="btn calc__btn calc__btn-yellow" data-action="devide">÷</button>
+              </div>
+              <div class="calc__btns">
+                <button class="btn calc__btn" data-number="1">1</button>
+                <button class="btn calc__btn" data-number="2">2</button>
+                <button class="btn calc__btn" data-number="3">3</button>
+                <button class="btn calc__btn calc__btn-yellow" data-action="multiply">×</button>
+              </div>
+              <div class="calc__btns">
+                <button class="btn calc__btn" data-number="4">4</button>
+                <button class="btn calc__btn" data-number="5">5</button>
+                <button class="btn calc__btn" data-number="6">6</button>
+                <button class="btn calc__btn calc__btn-yellow" data-action="substruct">-</button>
+              </div>
+              <div class="calc__btns">
+                <button class="btn calc__btn" data-number="7">7</button>
+                <button class="btn calc__btn" data-number="8">8</button>
+                <button class="btn calc__btn" data-number="9">9</button>
+                <button class="btn calc__btn calc__btn-yellow" data-action="add">+</button>
+              </div>
+              <div class="calc__btns">
+                <button class="btn calc__btn calc__btn-big" data-number="0">0</button>
+                <button class="btn calc__btn" data-number=".">.</button>
+                <button class="btn calc__btn calc__btn-yellow" data-action="equal">=</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:svgjs="http://svgjs.dev/svgjs" version="1.1" id="BgenPttrnSvgRootPreview" width="100%" height="100%">
+  <defs>
+    <pattern x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse" id="BgenPttrnLayer1">
+      <g id="PatternRootContent1">
+        <g id="BgenPttrnLayer1background">
+          <rect width="1" height="1" id="BgenPttrnBackground1" class="color_1 fill_color_1" fill="#0a0a0a"/>
+        </g>
+      </g>
+    </pattern>
+    <pattern x="0" y="0" width="92" height="75" patternUnits="userSpaceOnUse" id="BgenPttrnLayer2" patternTransform="matrix(0.3535533905932738,0.35355339059327373,-0.35355339059327373,0.3535533905932738,0,0)">
+      <g id="PatternRootContent2">
+        <g id="BgenPttrnLayer2Element4">
+          <use xlink:href="#BgenPttrnElement4" x="-122.21298217773438" y="-103.50245666503906" transform="translate(-46, -37.5) scale(0.72) translate(46, 37.5) rotate(90, -46, -37.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="-30.212982177734375" y="-103.50245666503906" transform="translate(46, -37.5) scale(0.72) translate(-46, 37.5) rotate(90, 46, -37.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="-30.212982177734375" y="-28.502456665039062" transform="translate(46, 37.5) scale(0.72) translate(-46, -37.5) rotate(90, 46, 37.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="-122.21298217773438" y="-28.502456665039062" transform="translate(-46, 37.5) scale(0.72) translate(46, -37.5) rotate(90, -46, 37.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="61.787017822265625" y="-28.502456665039062" transform="translate(138, 37.5) scale(0.72) translate(-138, -37.5) rotate(90, 138, 37.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="-30.212982177734375" y="46.49754333496094" transform="translate(46, 112.5) scale(0.72) translate(-46, -112.5) rotate(90, 46, 112.5)"/>
+          <use xlink:href="#BgenPttrnElement4" x="-30.212982177734375" y="46.49754333496094" transform="translate(46, 112.5) scale(0.72) translate(-46, -112.5) rotate(90, 46, 112.5)"/>
+        </g>
+      </g>
+    </pattern>
+    <symbol id="BgenPttrnElement4">
+      <g class="color_5 fill_color_5" fill="#ffd36525">
+        <path d="M95.945,33.39125061035156L123.945,33.39125061035156l0,4l-28,0l0,-4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M91.677,39.855247497558594L77.677,64.104248046875l-3.464,-2l14,-24.249l3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M88.213,32.927249908447266L74.213,8.67824935913086l3.464,-2l14,24.249l-3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M56.481,37.39125061035156L28.481,37.39125061035156l0,-4l28,0l0,4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M60.749,30.927249908447266L74.749,6.678249359130859l3.464,2l-14,24.249l-3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M64.213,37.855247497558594L78.213,62.104248046875l-3.464,2l-14,-24.249l3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M95.56,101.07763671875L81.56,125.32634735107422l-3.464,-2l14,-24.249l3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M92.096,94.14949035644531L78.096,69.900634765625l3.464,-2l14,24.249l-3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M99.828,94.61347961425781L127.828,94.6136245727539l0,4l-28,0l0,-4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M111.828,64.90071105957031L125.828,40.65199279785156l3.464,2l-14,24.249l-3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M115.292,71.828857421875L129.292,96.07771301269531l-3.464,2l-14,-24.249l3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M107.56,71.3648681640625L79.56,71.3647232055664l0,-4l28,0l0,4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M37.134,66.90103149414062L23.134,42.652320861816406l3.464,-2l14,24.249l-3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M44.866,67.36518096923828L72.866,67.36503601074219l0,4l-28,0l0,-4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M40.598,73.82918548583984L26.598,98.07804107666016l-3.464,-2l14,-24.249l3.464,2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M60.33,99.07795715332031L74.33,123.32666778564453l-3.464,2l-14,-24.249l3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M52.598,98.61380767822266L24.598,98.61395263671875l0,-4l28,0l0,4Z" transform="matrix(1,0,0,1,0,0)"/>
+        <path d="M56.866,92.14979553222656L70.866,67.90093994140625l3.464,2l-14,24.249l-3.464,-2Z" transform="matrix(1,0,0,1,0,0)"/>
+      </g>
+    </symbol>
+    <pattern x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse" id="BgenPttrnLayer3" patternTransform="matrix(0.5656854249492381,0.565685424949238,-0.565685424949238,0.5656854249492381,0,0)">
+      <g id="PatternRootContent3"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" id="BgenPttrnRctLayer1" fill="url(&quot;#BgenPttrnLayer1&quot;)"/>
+  <rect width="100%" height="100%" id="BgenPttrnRctLayer2" fill="url(&quot;#BgenPttrnLayer2&quot;)"/>
+  <rect width="100%" height="100%" id="BgenPttrnRctLayer3" fill="url(&quot;#BgenPttrnLayer3&quot;)"/>
+</svg>
