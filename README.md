@@ -34,7 +34,7 @@ choco install emscripten
 ```
 emcc -O2 ./cpp/index.cpp -o index.wasm -s WASM=1 -s STANDALONE_WASM -s SIDE_MODULE=1
 ```
-	Этой командой делал компиляция я
+Этой командой делал компиляция я
 
 
 5. Полезные ссылки 
