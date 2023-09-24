@@ -1,36 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const calcEl = document.querySelector('#calc');
-  if (calcEl) {
-    const calc = new Calc(calcEl);
-  }
+  const calcEl = document.querySelector('#calc'); 
+  if (!calcEl) console.error("ERROR, not find #calc element");
 
-  let test = 0;
-
-  const importObject = {
-    imports: {
-      imported_func(arg) {
-        console.log(arg);
-      },
-    },
-  };
-
-  fetch("index.wasm")
-    .then((response) => response.arrayBuffer())
-    .then((bytes) => {
-      const mod = new WebAssembly.Module(bytes);
-      const instance = new WebAssembly.Instance(mod, importObject);
-    });
-
-  console.log(test);
+  fetchWasmInstance("index.wasm")
+    .then((instance) => { 
+      const wasmCalc = new WasmCalc(instance);
+      const calc = new Calc(calcEl, wasmCalc);
+    })
+    .catch((e) => console.error(e));
 });
+
+async function fetchWasmInstance(path) {
+  const response = await fetch(path);
+  const bytes = await response.arrayBuffer();
+  const module = new WebAssembly.Module(bytes);
+  return new WebAssembly.Instance(module);
+}
+
+class WasmCalc {
+  constructor(wasmInstance) {
+    this.wasmInstance = wasmInstance;
+  }
+  add (num1, num2) {
+    return this.wasmInstance.exports.add(num1, num2);
+  }
+  devide (num1, num2) {
+    return this.wasmInstance.exports.devide(num1, num2);
+  }
+  multiply (num1, num2) {
+    return this.wasmInstance.exports.multiply(num1, num2);
+  }
+  substract (num1, num2) {
+    return this.wasmInstance.exports.substract(num1, num2);
+  }
+}
 
 class Calc {
   #num1 = 0;
   #num2 = 0;
   #action = "";
 
-  constructor(el) {
+  constructor(el, wasmCalc) {
     this.calcEl = el;
+    this.wasmCalc = wasmCalc;
     this.historyInput = el.querySelector('input[data-history]');
     this.resultInput = el.querySelector('input[data-result]');
     this.numberBtns = [...el.querySelectorAll('button[data-number]')];
@@ -153,17 +165,18 @@ class Calc {
   #calculate() {
     let result = 0;
     switch (this.#action) {
-      case 'devide': result = this.#num1 / this.#num2;
+      case 'devide': result = this.wasmCalc.devide(this.#num1, this.#num2);
         break;
-      case 'multiply': result = this.#num1 * this.#num2;
+      case 'multiply': result = this.wasmCalc.multiply(this.#num1, this.#num2);
         break;
-      case 'substruct': result = this.#num1 - this.#num2;
+      case 'substruct': result = this.wasmCalc.substract(this.#num1, this.#num2);
         break;
-      case 'add': result = this.#num1 + this.#num2;
+      case 'add': result = this.wasmCalc.add(this.#num1, this.#num2);
         break;
       default:
         return;
     }
+
     this.historyValue = "";
     this.textValue = String(result);
     this.#num1 = result;
