@@ -30,6 +30,8 @@ choco install emscripten
 
 	Нужно в команду компиляции добавить флаг **-s SIDE_MODULE=1**
 
+5. `emcc -O2 ./cpp/index.cpp -o index.wasm -s WASM=1 -s STANDALONE_WASM -s SIDE_MODULE=1` - Этой командой делал компиляция я.
+
 
 5. Полезные ссылки 
 	- https://metanit.com/cpp/webassembly/1.5.php
