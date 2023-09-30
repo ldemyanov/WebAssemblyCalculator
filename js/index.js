@@ -38,7 +38,28 @@ class WasmCalc {
 class Calc {
   #num1 = 0;
   #num2 = 0;
-  #action = "";
+  #action = null;
+  #btnActions = {
+    'ac': () => {
+      this.textValue = "";
+      this.historyValue = "";
+      this.#num1 = 0;
+      this.#num2 = 0;
+      this.#action = "";
+    },
+    'sign': () => {
+      if (!this.#action) this.#num1 *= -1;
+      if (this.#action) this.#num2 *= -1;
+      this.textValue = String(Number(this.textValue) * (-1));
+    },
+    'percent': () => this.textValue = String(Number(this.textValue) * (0.01)),
+    'devide': () => this.#inputAction("/", () => this.wasmCalc.devide(this.#num1, this.#num2)),
+    'multiply': () => this.#inputAction("*", () => this.wasmCalc.multiply(this.#num1, this.#num2)),
+    'substract': () => this.#inputAction("-", () => this.wasmCalc.substract(this.#num1, this.#num2)),
+    'add': () => this.#inputAction("+", () => this.wasmCalc.add(this.#num1, this.#num2)),
+    'equal': () => this.#calculate(),
+  }
+
 
   constructor(el, wasmCalc) {
     this.calcEl = el;
@@ -80,52 +101,7 @@ class Calc {
   #initActionListeners() {
     this.actionBtns.forEach((btn) => {
       const action = btn.dataset.action;
-
-      switch (action) {
-        case 'ac':
-          btn.addEventListener("click", () => {
-            this.textValue = "";
-            this.historyValue = "";
-            this.#num1 = 0;
-            this.#num2 = 0;
-            this.#action = "";
-          })
-          break;
-
-        case 'sign':
-          btn.addEventListener("click", () => {
-            if (!this.#action) this.#num1 *= -1;
-            if (this.#action) this.#num2 *= -1;
-            this.textValue = String(Number(this.textValue) * (-1));
-          })
-          break;
-
-        case 'percent':
-          btn.addEventListener("click", () => {
-            this.textValue = String(Number(this.textValue) * (0.01));
-          })
-          break;
-
-        case 'devide':
-          btn.addEventListener("click", () => this.#inputAction(action, "-"));
-          break;
-
-        case 'multiply':
-          btn.addEventListener("click", () => this.#inputAction(action, "×"));
-          break;
-
-        case 'substruct':
-          btn.addEventListener("click", () => this.#inputAction(action, "-"));
-          break;
-
-        case 'add':
-          btn.addEventListener("click", () => this.#inputAction(action, "+"));
-          break;
-
-        case 'equal':
-          btn.addEventListener("click", () => this.#calculate());
-          break;
-      }
+      btn.addEventListener("click", () => this.#btnActions[action]())
     });
   }
 
@@ -152,7 +128,7 @@ class Calc {
     }
   }
 
-  #inputAction(action, symbol) {
+  #inputAction(symbol, action) {
     if (this.#num1 && this.#action && this.#num2) this.#calculate();
 
     this.textValue = this.#action
@@ -163,24 +139,14 @@ class Calc {
   }
 
   #calculate() {
-    let result = 0;
-    switch (this.#action) {
-      case 'devide': result = this.wasmCalc.devide(this.#num1, this.#num2);
-        break;
-      case 'multiply': result = this.wasmCalc.multiply(this.#num1, this.#num2);
-        break;
-      case 'substruct': result = this.wasmCalc.substract(this.#num1, this.#num2);
-        break;
-      case 'add': result = this.wasmCalc.add(this.#num1, this.#num2);
-        break;
-      default:
-        return;
-    }
+    if (!this.#action) return;
+    
+    let result = this.#action();
 
     this.historyValue = "";
     this.textValue = String(result);
     this.#num1 = result;
     this.#num2 = 0;
-    this.#action = "";
+    this.#action = null;
   }
 }
